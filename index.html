@@ -37,101 +37,93 @@
       [x-cloak] {
         display: none !important;
       }
+      .fade-up {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+      }
+      .fade-up.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
 
-      /* Transition for hamburger lines to X */
       
     </style>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-source">
     <header class="sticky top-0 z-50 bg-gray-100 dark:bg-gray-800 shadow">
-      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-4">
-          <img src="img/logo.png" alt="Logo" class="w-10 h-10" />
-          <h3 class="text-2xl font-nunito font-bold">
-            Book-A-<span class="text-primary">Meal</span>
-          </h3>
-        </div>
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-center space-x-4">
+      <img src="spag.png" alt="Logo" class="w-10 h-10" />
+      <h3 class="text-2xl font-nunito font-bold">
+        Book-A-<span class="text-primary">Meal</span>
+      </h3>
+    </div>
 
-        <!-- Mobile Menu with separate X button -->
-        <div x-data="{ open: false }" class="md:hidden relative">
-          <!-- Hamburger Button always visible -->
-          <button
-            @click="open = true"
-            aria-label="Open menu"
-            class="w-8 h-8 flex flex-col justify-between items-center focus:outline-none"
-          >
-            <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
-            <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
-            <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
-          </button>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-8 font-semibold items-center">
+      <a href="#home" class="hover:text-primary transition">Home</a>
+      <a href="menu.html" class="hover:text-primary transition">Menu</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+      <a
+        href="cart.html"
+        class="py-2 px-5 rounded-full bg-gradient-to-b from-gradientFrom to-gradientTo text-white font-nunito text-sm hover:brightness-90 transition"
+      >Order Now</a>
+    </nav>
 
-          <!-- Overlay Menu -->
-          <div
-            x-cloak
-            x-show="open"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-            @click.away="open = false"
-            class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex flex-col justify-center items-center z-40"
-          >
-            <!-- Separate big X button top-right -->
-            <button
-              @click="open = false"
-              aria-label="Close menu"
-              class="absolute top-6 right-6 text-white text-4xl font-bold focus:outline-none hover:text-primary transition"
-            >
-              &times;
-            </button>
+    <!-- Mobile Nav -->
+    <div x-data="{ open: false }" class="md:hidden relative">
+      <!-- Hamburger Icon -->
+      <button
+        x-show="!open"
+        @click="open = true"
+        aria-label="Open menu"
+        class="w-8 h-8 flex flex-col justify-between items-center focus:outline-none"
+      >
+        <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
+        <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
+        <span class="block h-0.5 w-full bg-gray-800 dark:bg-gray-200 rounded"></span>
+      </button>
 
-            <nav class="flex flex-col space-y-10 text-white text-3xl font-semibold text-center">
-              <a
-                href="#home"
-                @click="open = false"
-                class="hover:text-primary transition"
-                >Home</a
-              >
-              <a
-                href="#menu"
-                @click="open = false"
-                class="hover:text-primary transition"
-                >Menu</a
-              >
-              <a
-                href="#contact"
-                @click="open = false"
-                class="hover:text-primary transition"
-                >Contact</a
-              >
-              <a
-                href="#order"
-                @click="open = false"
-                class="inline-block mt-4 py-3 px-6 rounded-full bg-gradient-to-b from-gradientFrom to-gradientTo text-white font-nunito text-lg hover:brightness-90 transition"
-                >Order Now</a
-              >
-            </nav>
-          </div>
-        </div>
-
-        <!-- Desktop Menu -->
-        <nav
-          class="hidden md:flex items-center space-x-8 font-bold"
-          aria-label="Primary navigation"
+      <!-- Mobile Menu Overlay -->
+      <div
+        x-cloak
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click.away="open = false"
+        class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex flex-col justify-center items-center z-40"
+      >
+        <!-- Close (X) Button -->
+        <button
+          @click="open = false"
+          aria-label="Close menu"
+          class="absolute top-6 right-6 text-white text-4xl font-bold focus:outline-none hover:text-primary transition"
         >
-          <a href="#home" class="hover:text-primary">Home</a>
-          <a href="#menu" class="hover:text-primary">Menu</a>
-          <a href="#contact" class="hover:text-primary">Contact</a>
-          <button
-            class="ml-4 py-2 px-4 rounded-full bg-gradient-to-b from-gradientFrom to-gradientTo text-white font-nunito text-sm"
-          >
-            Order Now
-          </button>
+          &times;
+        </button>
+
+        <!-- Mobile Nav Links -->
+        <nav class="flex flex-col space-y-10 text-white text-3xl font-semibold text-center">
+          <a href="#home" @click="open = false" class="hover:text-primary transition">Home</a>
+          <a href="menu.html" @click="open = false" class="hover:text-primary transition">Menu</a>
+          <a href="#contact" @click="open = false" class="hover:text-primary transition">Contact</a>
+          <a
+            href="cart.html"
+            @click="open = false"
+            class="inline-block mt-4 py-3 px-6 rounded-full bg-gradient-to-b from-gradientFrom to-gradientTo text-white font-nunito text-lg hover:brightness-90 transition"
+          >Order Now</a>
         </nav>
       </div>
-    </header>
+    </div>
+  </div>
+</header>
+
 
     <!-- Hero Section -->
     <section
@@ -153,6 +145,7 @@
           </p>
           <button
             class="py-3 px-6 rounded-full bg-gradient-to-b from-gradientFrom to-gradientTo text-white font-nunito text-lg"
+            onclick="location.href='cart.html'"
           >
             Order Now
           </button>
