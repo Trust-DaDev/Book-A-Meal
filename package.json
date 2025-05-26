@@ -1,0 +1,24 @@
+{
+  "name": "book-a-meal",
+  "version": "1.0.0",
+  "description": "<h1><b>Book-A-Meal now!</b></h1>\r  This is a webapp for ordering meals and tho it's on progress\r  <i>We'd</i> hope you like it, if you do why not give it a <b>Star.</b>\r  <hr>\r  <h3> Thank you!</h3>",
+  "main": "home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trust-DaDev/Book-A-Meal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Trust-DaDev/Book-A-Meal/issues"
+  },
+  "homepage": "https://github.com/Trust-DaDev/Book-A-Meal#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.4"
+  }
+}

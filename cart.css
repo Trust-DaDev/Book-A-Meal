@@ -1,0 +1,27 @@
+ body {
+      font-family: 'Nunito', 'Barlow Condensed', sans-serif;
+      padding-top: 72px;
+    }
+#toast {
+  opacity: 0;
+  visibility: hidden; /* add this */
+  pointer-events: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #0C7CE2; /* your blue */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(12, 124, 226, 0.5);
+  font-weight: 600;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  visibility: visible;  /* add this */
+  pointer-events: auto; /* add this */
+}
+

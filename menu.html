@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu - Book A Meal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Nunito&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Nunito', 'Barlow Condensed', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 shadow-md bg-white">
+    <div class="flex items-center gap-2">
+      <img src="spag.png" alt="logo" class="h-8 w-8" />
+      <h1 class="text-xl font-bold text-[#FF9900]">B<span class="text-black">AM</span></h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <button
+        onclick="location.href='cart.html'"
+        class="bg-[#0C7CE2] hover:bg-[#095BB5] text-white font-semibold px-4 py-2 rounded-lg shadow-md transition-all"
+      >
+        View Cart
+      </button>
+      <button id="cart-btn" class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6 text-gray-700" viewBox="0 0 16 16">
+          <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.929 1.757z"/>
+        </svg>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Meals Container -->
+  <section class="px-6 py-10 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Our Meals</h2>
+    <div id="meal-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"></div>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-[#0C7CE2] text-white px-5 py-3 rounded shadow-lg hidden"></div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

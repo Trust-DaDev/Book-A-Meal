@@ -1,0 +1,65 @@
+.form{
+    width:35%;
+    height:260px;
+    display:grid;
+    margin-top: 130px;
+    margin-left: 370px;
+
+}
+.formtitle{
+    margin-bottom: 15px;
+    left:35%;
+    top:30px;
+    position: absolute;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1.5px;
+    color: rgb(255, 94, 0);
+}
+label{
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    margin:10px  0 5px 0px;
+}
+input{
+    width:370px;
+    height: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 5px;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #000;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.4rem;
+}
+#submit{
+    width:170px;
+    height:38px;
+    border:0px solid #000;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 19px;
+    color: lightgreen;
+    background-color: rgba(0, 0, 0, 0.986);
+    position: absolute;
+    top:460px;
+    left: 530px;
+}
+.account{
+    margin-left: 35%;
+}
+.account p{
+    font-size: 18px;
+    margin-top: 150px;
+    word-spacing: 4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.account p a{
+    text-decoration: none;
+    color: rgb(255, 94, 0);
+}
